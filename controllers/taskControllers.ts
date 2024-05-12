@@ -167,7 +167,7 @@ export const getPendingTasks = async (
     const tasksQuery = db
       .collection("tasks")
       .where("isCompleted", "in", [false])
-      .orderBy("createdAt", "desc");
+      .orderBy("createdAt", "asc");
 
     const tasksSnapshot = await tasksQuery.get();
     const taskArray: Task[] = [];
